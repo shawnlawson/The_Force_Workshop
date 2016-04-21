@@ -2,12 +2,12 @@
 
 
 void main () {
-    vec2 uvN = uvN();
-    vec2 uv = uv();
+    vec2 stN = uvN();
+    vec2 st = uv();
     
-    float f = fract(uvN.y * 60. - sin(time) );
-    float f2 = fract(uvN.y * 20. - cos(time) );
-    float f3 = fract(uvN.y * 80. - asin(time) );
+    float f = fract(stN.y * 60. - sin(time) );
+    float f2 = fract(stN.y * 20. - cos(time) );
+    float f3 = fract(stN.y * 80. - asin(time) );
  
  
     vec3 color = step(.5, f) * purple;

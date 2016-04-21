@@ -2,8 +2,8 @@
 
 
 void main () {
-    vec2 uvN = uvN();
-    vec2 uv = uv();
+    vec2 stN = uvN();
+    vec2 st = uv();
     vec3 color = black;
     for (int i = 0; i < 150; i++) {
         float x = fract(float(i) * PI2 + time * .1);
@@ -14,11 +14,11 @@ void main () {
         color += circle(y * 4. - 2., x * 2. - 1., .5 , .5) * yellow * bands.x * 4.;
     }
     
-    vec3 bb = texture2D(backbuffer,  uvN).rgb;
+    vec3 bb = texture2D(backbuffer,  stN).rgb;
     
     color = mix(color, bb, .94);
     
-    vec3 fade = 1.1 - uvN.y * white;
+    vec3 fade = 1.1 - stN.y * white;
     
 	gl_FragColor = vec4(color * fade , 1.0);
 }
